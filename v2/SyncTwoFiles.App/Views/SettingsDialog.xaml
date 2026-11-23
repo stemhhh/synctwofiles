@@ -1,0 +1,79 @@
+<v:OverlayDialog x:Class="SyncTwoFiles.App.Views.SettingsDialog"
+                 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                 xmlns:v="clr-namespace:SyncTwoFiles.App.Views"
+                 xmlns:l="clr-namespace:SyncTwoFiles.App">
+  <Border Style="{StaticResource DialogCard}" Width="540" Margin="0,20">
+    <ScrollViewer VerticalScrollBarVisibility="Auto" Margin="-6,0,-14,0" Padding="6,0,14,0">
+      <StackPanel>
+        <TextBlock Text="{l:T settings.title}" Style="{StaticResource DialogTitle}"/>
+
+        <TextBlock Text="{l:T settings.language}" Style="{StaticResource FieldLabel}"/>
+        <Border Background="#1C1C1E" CornerRadius="8" HorizontalAlignment="Left" Padding="2">
+          <StackPanel Orientation="Horizontal">
+            <RadioButton x:Name="LangAuto" GroupName="lang" Style="{StaticResource Segment}" Content="{l:T settings.langAuto}"/>
+            <RadioButton x:Name="LangEs" GroupName="lang" Style="{StaticResource Segment}" Content="Español"/>
+            <RadioButton x:Name="LangEn" GroupName="lang" Style="{StaticResource Segment}" Content="English"/>
+          </StackPanel>
+        </Border>
+        <TextBlock Text="{l:T settings.languageHint}" Style="{StaticResource Hint}"/>
+
+        <Grid Margin="0,4,0,0">
+          <Grid.ColumnDefinitions><ColumnDefinition/><ColumnDefinition Width="16"/><ColumnDefinition/></Grid.ColumnDefinitions>
+          <StackPanel>
+            <TextBlock Text="{l:T settings.retention}" Style="{StaticResource FieldLabel}"/>
+            <TextBox x:Name="Retention" Style="{StaticResource Field}"/>
+            <TextBlock Text="{l:T settings.retentionHint}" Style="{StaticResource Hint}"/>
+          </StackPanel>
+          <StackPanel Grid.Column="2">
+            <TextBlock Text="{l:T settings.alertHours}" Style="{StaticResource FieldLabel}"/>
+            <TextBox x:Name="AlertHours" Style="{StaticResource Field}"/>
+            <TextBlock Text="{l:T settings.alertHoursHint}" Style="{StaticResource Hint}"/>
+          </StackPanel>
+        </Grid>
+
+        <Border Background="#232325" CornerRadius="10" Margin="0,18,0,0">
+          <Grid Margin="14,11">
+            <Grid.ColumnDefinitions><ColumnDefinition/><ColumnDefinition Width="Auto"/></Grid.ColumnDefinitions>
+            <StackPanel VerticalAlignment="Center" Margin="0,0,12,0">
+              <TextBlock Text="{l:T settings.startup}" Style="{StaticResource RowTitle}"/>
+              <TextBlock Text="{l:T settings.startupHint}" Style="{StaticResource RowSub}" TextWrapping="Wrap"/>
+            </StackPanel>
+            <ToggleButton x:Name="StartWithWindows" Grid.Column="1" Style="{StaticResource Switch}" VerticalAlignment="Center"/>
+          </Grid>
+        </Border>
+
+        <StackPanel x:Name="UpdatePanel">
+          <TextBlock Text="{l:T settings.updateUrl}" Style="{StaticResource FieldLabel}"/>
+          <Grid>
+            <Grid.ColumnDefinitions><ColumnDefinition/><ColumnDefinition Width="Auto"/></Grid.ColumnDefinitions>
+            <TextBox x:Name="UpdateUrl" Style="{StaticResource Field}"/>
+            <Button x:Name="CheckNow" Grid.Column="1" Style="{StaticResource Btn}" Content="{l:T settings.checkNow}" Margin="8,0,0,0"/>
+          </Grid>
+          <TextBlock x:Name="UpdateResult" Style="{StaticResource Hint}" Text="{l:T settings.updateHint}"/>
+        </StackPanel>
+        <TextBlock x:Name="StoreNote" Text="{l:T settings.storeUpdates}" Style="{StaticResource Hint}" Margin="2,14,0,0"/>
+
+        <Border Height="1" Background="{StaticResource Sep}" Margin="0,18,0,0"/>
+        <StackPanel Orientation="Horizontal" Margin="0,14,0,0">
+          <Image Source="/Assets/SyncTwoFiles.png" Width="36" Height="36" RenderOptions.BitmapScalingMode="HighQuality"/>
+          <StackPanel Margin="12,0,0,0" VerticalAlignment="Center">
+            <TextBlock x:Name="AboutTitle" Style="{StaticResource RowTitle}"/>
+            <TextBlock Text="{l:T settings.privacy}" Style="{StaticResource RowSub}" TextWrapping="Wrap" MaxWidth="420"/>
+          </StackPanel>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Margin="40,6,0,0">
+          <Button x:Name="ShowWelcome" Style="{StaticResource Link}" Content="{l:T settings.showWelcome}" FontSize="12"/>
+          <Button x:Name="OpenData" Style="{StaticResource Link}" Content="{l:T settings.openData}" FontSize="12"/>
+        </StackPanel>
+
+        <TextBlock x:Name="Error" Foreground="#FF6961" TextWrapping="Wrap" Margin="2,12,0,0" Visibility="Collapsed"/>
+        <Grid Margin="0,20,0,0">
+          <Grid.ColumnDefinitions><ColumnDefinition/><ColumnDefinition Width="10"/><ColumnDefinition/></Grid.ColumnDefinitions>
+          <Button x:Name="Cancel" Style="{StaticResource BtnGray}" Content="{l:T common.cancel}" Padding="0,8"/>
+          <Button x:Name="Save" Grid.Column="2" Style="{StaticResource BtnPrimary}" Content="{l:T common.save}" Padding="0,8"/>
+        </Grid>
+      </StackPanel>
+    </ScrollViewer>
+  </Border>
+</v:OverlayDialog>

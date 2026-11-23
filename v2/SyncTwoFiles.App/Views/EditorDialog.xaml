@@ -1,0 +1,62 @@
+<v:OverlayDialog x:Class="SyncTwoFiles.App.Views.EditorDialog"
+                 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                 xmlns:v="clr-namespace:SyncTwoFiles.App.Views"
+                 xmlns:l="clr-namespace:SyncTwoFiles.App">
+  <Border Style="{StaticResource DialogCard}" Width="540" Margin="0,20">
+    <ScrollViewer VerticalScrollBarVisibility="Auto" Margin="-6,0,-14,0" Padding="6,0,14,0">
+      <StackPanel>
+        <TextBlock x:Name="EdTitle" Style="{StaticResource DialogTitle}"/>
+        <TextBlock Text="{l:T editor.name}" Style="{StaticResource FieldLabel}"/>
+        <TextBox x:Name="EdName" Style="{StaticResource Field}"/>
+        <TextBlock Text="{l:T editor.source}" Style="{StaticResource FieldLabel}"/>
+        <Grid>
+          <Grid.ColumnDefinitions><ColumnDefinition/><ColumnDefinition Width="Auto"/></Grid.ColumnDefinitions>
+          <TextBox x:Name="EdSrc" Style="{StaticResource Field}" IsReadOnly="True"/>
+          <Button x:Name="EdPickSrc" Grid.Column="1" Style="{StaticResource Btn}" Content="{l:T editor.pick}" Margin="8,0,0,0"/>
+        </Grid>
+        <TextBlock Text="{l:T editor.backup}" Style="{StaticResource FieldLabel}"/>
+        <Grid>
+          <Grid.ColumnDefinitions><ColumnDefinition/><ColumnDefinition Width="Auto"/></Grid.ColumnDefinitions>
+          <TextBox x:Name="EdDst" Style="{StaticResource Field}" IsReadOnly="True"/>
+          <Button x:Name="EdPickDst" Grid.Column="1" Style="{StaticResource Btn}" Content="{l:T editor.pick}" Margin="8,0,0,0"/>
+        </Grid>
+        <TextBlock Text="{l:T editor.backupHint}" Style="{StaticResource Hint}"/>
+
+        <TextBlock Text="{l:T editor.excludes}" Style="{StaticResource FieldLabel}"/>
+        <TextBox x:Name="EdExcludes" Style="{StaticResource Field}" AcceptsReturn="True" TextWrapping="NoWrap" Height="76"
+                 VerticalContentAlignment="Top" VerticalScrollBarVisibility="Auto" FontFamily="Cascadia Mono, Consolas" FontSize="12"/>
+        <TextBlock Text="{l:T editor.excludesHint}" Style="{StaticResource Hint}"/>
+
+        <Border Background="#232325" CornerRadius="10" Margin="0,18,0,0">
+          <StackPanel>
+            <Grid Margin="14,11">
+              <Grid.ColumnDefinitions><ColumnDefinition/><ColumnDefinition Width="Auto"/></Grid.ColumnDefinitions>
+              <StackPanel VerticalAlignment="Center" Margin="0,0,12,0">
+                <TextBlock Text="{l:T sync.auto}" Style="{StaticResource RowTitle}"/>
+                <TextBlock Text="{l:T editor.autoHint}" Style="{StaticResource RowSub}" TextWrapping="Wrap"/>
+              </StackPanel>
+              <ToggleButton x:Name="EdAuto" Grid.Column="1" Style="{StaticResource Switch}" VerticalAlignment="Center"/>
+            </Grid>
+            <Border Height="1" Background="{StaticResource Sep}" Margin="14,0,0,0"/>
+            <Grid Margin="14,11">
+              <Grid.ColumnDefinitions><ColumnDefinition/><ColumnDefinition Width="Auto"/></Grid.ColumnDefinitions>
+              <StackPanel VerticalAlignment="Center" Margin="0,0,12,0">
+                <TextBlock Text="{l:T editor.lock}" Style="{StaticResource RowTitle}"/>
+                <TextBlock Text="{l:T editor.lockHint}" Style="{StaticResource RowSub}" TextWrapping="Wrap"/>
+              </StackPanel>
+              <ToggleButton x:Name="EdLock" Grid.Column="1" Style="{StaticResource Switch}" VerticalAlignment="Center"/>
+            </Grid>
+          </StackPanel>
+        </Border>
+
+        <TextBlock x:Name="EdError" Foreground="#FF6961" TextWrapping="Wrap" Margin="2,12,0,0" Visibility="Collapsed"/>
+        <Grid Margin="0,20,0,0">
+          <Grid.ColumnDefinitions><ColumnDefinition/><ColumnDefinition Width="10"/><ColumnDefinition/></Grid.ColumnDefinitions>
+          <Button x:Name="EdCancel" Style="{StaticResource BtnGray}" Content="{l:T common.cancel}" Padding="0,8"/>
+          <Button x:Name="EdSave" Grid.Column="2" Style="{StaticResource BtnPrimary}" Content="{l:T common.save}" Padding="0,8"/>
+        </Grid>
+      </StackPanel>
+    </ScrollViewer>
+  </Border>
+</v:OverlayDialog>

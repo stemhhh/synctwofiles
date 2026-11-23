@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows10.0.19041.0</TargetFramework>
+    <SupportedOSPlatformVersion>10.0.17763.0</SupportedOSPlatformVersion>
+    <UseWPF>true</UseWPF>
+    <UseWindowsForms>true</UseWindowsForms>
+    <AssemblyName>SyncTwoFiles</AssemblyName>
+    <RootNamespace>SyncTwoFiles.App</RootNamespace>
+    <ApplicationIcon>..\..\assets\SyncTwoFiles.ico</ApplicationIcon>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <InvariantGlobalization>false</InvariantGlobalization>
+    <NoWarn>$(NoWarn);WFAC010</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SyncTwoFiles.Core\SyncTwoFiles.Core.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="..\..\assets\SyncTwoFiles.png" Link="Assets\SyncTwoFiles.png" />
+    <Resource Include="..\..\assets\SyncTwoFiles.ico" Link="Assets\SyncTwoFiles.ico" />
+  </ItemGroup>
+</Project>

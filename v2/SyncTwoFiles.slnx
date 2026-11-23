@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="SyncTwoFiles.App/SyncTwoFiles.App.csproj" />
+  <Project Path="SyncTwoFiles.Core/SyncTwoFiles.Core.csproj" />
+  <Project Path="SyncTwoFiles.Tests/SyncTwoFiles.Tests.csproj" />
+</Solution>

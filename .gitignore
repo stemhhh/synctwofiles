@@ -1,0 +1,17 @@
+node_modules/
+dist/
+build/
+.release/
+release/win-unpacked/
+*.exe
+*.msix
+*.appx
+.vs/
+bin/
+obj/
+artifacts/
+TestResults/
+.wrangler/
+*.user
+*.suo
+.DS_Store

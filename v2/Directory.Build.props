@@ -1,0 +1,13 @@
+<Project>
+  <PropertyGroup>
+    <Version>2.0.0</Version>
+    <Authors>STEM</Authors>
+    <Company>STEM</Company>
+    <Product>Sync two File</Product>
+    <Copyright>© 2026 STEM</Copyright>
+    <LangVersion>latest</LangVersion>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <SatelliteResourceLanguages>en;es</SatelliteResourceLanguages>
+  </PropertyGroup>
+</Project>
