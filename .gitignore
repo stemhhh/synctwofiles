@@ -15,3 +15,4 @@ TestResults/
 *.user
 *.suo
 .DS_Store
+AppPackages/
